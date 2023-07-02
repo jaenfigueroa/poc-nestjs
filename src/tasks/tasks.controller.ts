@@ -1,6 +1,14 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { TasksService } from './tasks.service';
-import { CreateTaskDto } from './dto/task.dto';
+import { CreateTaskDto, UpdateTaskDto } from './dto/task.dto';
 
 @Controller('tasks')
 export class TasksController {
@@ -22,5 +30,21 @@ export class TasksController {
       nuevaTarea.title,
       nuevaTarea.description,
     );
+  }
+
+  @Delete(':id')
+  eliminaTarea(@Param('id') id: string) {
+    // aqui usando el decorador @param para sacar el id de la url, y lo guardamos
+    // en la variable -> "id"
+    return this.tasksService.deleteTask(id);
+  }
+
+  @Patch(':id')
+  actualizaTarea(
+    @Param('id') id: string,
+    @Body() updatedFields: UpdateTaskDto,
+  ) {
+    //sacamos el id de la url y los campos actualizados del body de la peticion
+    return this.tasksService.updateTask(id, updatedFields);
   }
 }
