@@ -24,7 +24,7 @@ module.exports = {
 
     'quotes': ['warn', 'single'], //USAR COMILLAS SIMPLES ''
     // 'semi': ['warn', 'never'], //NO USAR PUNTO Y COMA ;
-    'indent': ['warn', 2], //USAR DOS ESPACIOS COMO TAB
+    // 'indent': ['warn', 2], //USAR DOS ESPACIOS COMO TAB
     'eqeqeq': ['warn'], //USAR SIEMPRE IGUALDAD ESTRICTA ===
     'comma-dangle': ['warn', 'always-multiline'], //SIEMPRE PONER COMA ADICIONAL AL FINAL DE LAS LISTAS
     // 'no-console': ['warn'], //NO DEJAR CONSOLE.LOG TIRADOS

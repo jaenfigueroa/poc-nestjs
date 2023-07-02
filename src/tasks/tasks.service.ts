@@ -43,7 +43,8 @@ export class TasksService {
 
   updateTask(id: string, updatedFields: UpdateTaskDto) {
     //Partial vuelve todas las propiedades de Task opcionales
-    //Object.assign() fuciona las propiedades de un objeto a otro, si se repiten, se sobreescriben
+    //Object.assign() fuciona las propiedades de un objeto a otro
+    // si se repiten, se sobreescriben
 
     const task = this.getTaskById(id);
     const newTask = Object.assign(task, updatedFields);
