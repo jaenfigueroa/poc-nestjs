@@ -13,9 +13,10 @@ export class TasksController {
 
   @Post()
   creaNuevaTarea(@Body() nuevaTarea: CreateTaskDto) {
-    // aqui arriba se esta usando el decorador @Body() para obtener el body de la peticion y lo guardamos en "nuevaTarea"
-    // para tipar esto, crear un DTO, en este caso se creo el archivo task.dto.ts
-    // y luego desde el "nuevaTarea", podemos sacar los valores enviados en el body
+    // aqui arriba se esta usando el decorador @Body() para obtener el body de la peticion
+    // y lo guardamos en la variable -> "nuevaTarea"
+    // para tipar esto, creamos un DTO, en este caso se creo el archivo ./dto/task.dto.ts
+    // y luego usado "nuevaTarea", podemos sacar los valores enviados en el body
 
     return this.tasksService.createTask(
       nuevaTarea.title,
